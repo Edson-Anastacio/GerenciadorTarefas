@@ -47,8 +47,9 @@ public class MainController {
         btnRemover.disableProperty().bind(Bindings.isNull(table.getSelectionModel().selectedItemProperty()));
         btnToggleConcluida.disableProperty().bind(Bindings.isNull(table.getSelectionModel().selectedItemProperty()));
 
-        // formatar coluna concluída com checkbox
-        colConcluida.setCellFactory(tc -> new TableCell<>() {
+        // --- CORREÇÃO AQUI EMBAIXO ---
+        // Adicionamos <Task, Boolean> dentro do TableCell
+        colConcluida.setCellFactory(tc -> new TableCell<Task, Boolean>() {
             @Override
             protected void updateItem(Boolean concluida, boolean empty) {
                 super.updateItem(concluida, empty);
@@ -56,7 +57,8 @@ public class MainController {
                     setGraphic(null);
                 } else {
                     CheckBox cb = new CheckBox();
-                    cb.setDisable(true);
+                    cb.setDisable(true); // Checkbox apenas visual
+                    // Verifica se não é nulo para evitar erro
                     cb.setSelected(concluida != null && concluida);
                     setGraphic(cb);
                 }
