@@ -67,12 +67,3 @@ Devido ao funcionamento dos módulos do JavaFX em versões recentes do JDK, **n�
     mvn javafx:run
     ```
 
----
-
-## 📸 Screenshots
-
-<<<<<<< HEAD
-*(Espaço reservado para imagens do funcionamento do sistema)*
-=======
-*(Espaço reservado para imagens do funcionamento do sistema)*
->>>>>>> 0c321c085d2d05f4dfd6362fcaf761adb2852318
